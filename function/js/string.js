@@ -1,0 +1,11 @@
+var str = ' Hello JavaScript ';
+document.write('<code>str.length</code> : ' + str.length + '<br />');
+document.write('<code>str.toUpperCase()</code> : ' + str.toUpperCase() + '<br />');
+document.write('<code>str.toLowerCase()</code> : ' + str.toLowerCase() + '<br />');
+document.write('<code>str.charAt(0)</code> : ' + str.charAt(0) + '<br />');
+document.write('<code>str.indexOf(\'ll\')</code> : ' + str.indexOf('ll') + '<br />');
+document.write('<code>str.lastIndexOf(\'a\')</code> : ' + str.lastIndexOf('a') + '<br />');
+document.write('<code>str.substring(0,5)</code> : ' + str.substring(0,5) + '<br />');
+document.write('<code>str.split(\' \')</code> : ' + str.split(' ') + '<br />');
+document.write('<code>str.trim()</code> : ' + str.trim() + '<br />');
+document.write('<code>str.replace(\'ello\', \'i\')</code> : ' + str.replace('ello', 'i') + '<br />');

@@ -1,0 +1,111 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+
+    <title>JavaScript基础（一）</title>
+</head>
+
+<body>
+    <div class="container bg-light col-lg-6">
+        <br />
+        <h1>JavaScript基础（一）</h1>
+        <p>概述：注释、变量及拓展</p>
+        <br />
+        <h3>注释</h3>
+        <br />
+        <p>对于以下代码:</p>
+        <pre>
+1. &ltscript>document.write(' 不加注释 ')&lt/script>
+2. // document.write(' 使用单行注释，内容不显示 ' + '&ltbr />')
+3. /* document.write(' 使用多行注释，内容不显示 ') */
+                </pre>
+        <p>结果（源码: comment.js）:</p>
+        <p>1.
+            <script>document.write("不加注释")</script>
+        </p>
+        <p>2.
+            <script src="./js/comment.js"></script>
+        </p>
+        <p>3.
+            <script src="./js/comment.js"></script>
+        </p>
+        <hr />
+        <br />
+        <h3>变量</h3>
+        <br />
+        <p>1. 变量声明:
+            <pre>var varName;</pre>
+        </p>
+        <p>2. 变量赋值:
+            <pre>varName = 2;</pre>
+        </p>
+        <p>3. 基本数据类型:
+            <ul>
+                <li>数字类型(Number)--变量存储数字:
+                    <pre>
+    var num = 2; 
+                    </pre>
+                </li>
+                <li>字符串类型(String)--变量存储字符串:
+                    <pre>
+    var str = 'Hello'; 
+                    </pre>
+                </li>
+
+                <li>布尔类型(Boolean)--变量存储布尔值:
+                    <pre>
+    var right = true
+                    </pre>
+                </li>
+                <li>数组(Array)--创建数组：
+                    <pre>
+    var nums;
+    nums = [2, 6, 8];
+                    </pre>
+                </li>
+                <li>...</li>
+            </ul>
+        </p>
+        <hr />
+        <br />
+        <h3>其它</h3>
+        <br />
+        <p>1. 数组长度 <code>.length</code>--结果:
+            <script src="./js/numLen.js"></script>（源码：numLen.js）
+            <pre>
+    var nums, numLen;
+    nums = [2, 6, 8];
+    numLen = nums.length
+            </pre>
+        </p>
+        <p>2. 表达式:
+            <pre>
+    1. var fruit = 'apple';
+    2. var result = 2 * 3;
+            </pre>
+        </p>
+        <hr />
+
+    </div>
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+        integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+        integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>

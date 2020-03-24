@@ -1,0 +1,10 @@
+var today = new Date()
+
+document.write('<code>today.getDate()</code> : ' + today.getDate() + '<br />')
+document.write('<code>today.getDay()</code> : ' + today.getDay() + '<br />')
+document.write('<code>today.getFullYear()</code> : ' + today.getFullYear() + '<br />')
+document.write('<code>today.getHours()</code> : ' + today.getHours() + '<br />')
+document.write('<code>today.getMilliseconds()</code> : ' + today.getMilliseconds() + '<br />')
+document.write('<code>today.getMinutes()</code> : ' + today.getMinutes() + '<br />')
+document.write('<code>today.getMonth()</code> : ' + today.getMonth() + '<br />')
+document.write('<code>today.getSeconds()</code> : ' + today.getSeconds() + '<br />')

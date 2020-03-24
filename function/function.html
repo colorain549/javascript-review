@@ -1,0 +1,309 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+
+    <title>JavaScript基础（二）</title>
+</head>
+
+<body>
+    <div class="container bg-light col-lg-8">
+        <br />
+        <h1>JavaScript基础（二）</h1>
+        <p>函数、方法与对象</p>
+        <br />
+        <h3>函数</h3>
+        <br />
+        <p>
+            <ol>
+                <li>
+                    声明并调用函数(源码fruit.js):
+                    <pre>
+function fruit(){
+    document.write('apple')
+    }
+fruit()
+                    </pre>
+                    结果:
+                    <div class="text-primary" id="result">
+                        <script src="./js/fruit.js"></script>
+                    </div>
+                </li>
+                <br />
+                <li>
+                    声明并调用含形参的函数(源码:circleArea.js):
+                    <pre>
+function circleArea(pi, radius){
+    area = pi * radius * radius
+    return area
+}
+area(3, 2)
+document.write(area)
+                    </pre>
+                    结果:
+                    <div class="text-primary">
+                        <script src="./js/circleArea.js"></script>
+                    </div>
+                </li>
+                <br />
+                <li>
+                    声明名并调用函数表达式(源码:circleArea2.js):
+                    <pre>
+var circleArea = function(pi, radius){
+    area = pi * radius * radius
+    return area
+}
+var result = circleArea(3, 6)
+document.write(result)
+                    </pre>
+                    结果:
+                    <div class="text-primary">
+                        <script src="./js/circleArea2.js"></script>
+                    </div>
+                </li>
+                <br />
+                <li>
+                    立即调用函数表达式(IIFE)，读作iffy <p class="badge badge-danger">难点</p>
+                    <pre>
+var circleArea = (function(){
+    var pi = 3;
+    radius = 5;
+    area = pi * radius * radius;
+    return area;
+}())
+                    </pre>
+                </li>
+            </ol>
+        </p>
+        <!--  -->
+        <br />
+        <h3>对象</h3>
+        <br />
+        <ol>
+            <li>
+                字面量语法（源码:battery.js）
+                <pre>
+var battery = {
+    name = 'Brand',
+    full: 100,
+    used: 28,
+    estimated: function(){
+        return this.full - this.used
+    }
+}
+var batteryEstimated = document.getElementById('batteryEstimatedID')
+batteryEstimated.textContent = battery.estimated();
+                </pre>
+                结果:
+                <div class="text-primary" id="batteryEstimatedID"></div>
+            </li>
+            <br />
+            <li>
+                字面量语法（源码:battery2.js）
+                <pre>
+var battery = {}
+battery.name = 'First Brand';
+battery.full = 100;
+battery.used = 78;
+battery.estimated = function () {
+    return this.full - this.used;
+}
+
+var batteryEstimated = document.getElementById('batteryEstimatedID5')
+batteryEstimated.textContent = battery.estimated();
+                </pre>
+                结果:
+                <div class="text-primary" id="batteryEstimatedID5">
+                    <script src="./js/battery2.js"></script>
+                </div>
+            </li>
+            <br />
+            <li>对象构造语法（源码:battery3.js）
+                <pre>
+var battery = new Object()
+battery.name = 'Second Brand'
+battery.full = 100,
+battery.used = 32,
+battery.estimated = function(){
+    return this.full - this.used
+}
+var batteryEstimated = document.getElementById('batteryEstimatedID2')
+batteryEstimated.textContent = battery.estimated();
+                </pre>
+                结果:
+                <div class="text-primary" id="batteryEstimatedID2"></div>
+            </li>
+            <br />
+            <li>对象构造函数语法（源码:battery4.js）
+                <pre>
+function Battery(name, full, used) {
+    this.name = name;
+    this.full = full;
+    this.used = used;
+    this.estimated = function () {
+        return this.full - this.used;
+    }
+}
+var thirdBattery = new Battery('ThirdBattery', 100, 68);
+var fourthBattery = new Battery('FourthBattery', 100, 38);
+
+var details1 = thirdBattery.estimated();
+var thirdEstimated = document.getElementById('batteryEstimatedID3');
+thirdEstimated.textContent = details1;
+
+var details2 = fourthBattery.estimated();
+var thirdEstimated = document.getElementById('batteryEstimatedID4');
+thirdEstimated.textContent = details2;
+                </pre>
+                结果:
+                <div class="text-primary" id="batteryEstimatedID3"></div>
+                <div class="text-primary" id="batteryEstimatedID4"></div>
+                <br />
+            </li>
+            <li>
+                <code>delete</code> 删除属性
+                <pre>
+var battery = {
+    name = 'First Brand',
+    full: 100,
+    used: 28,
+    estimated: function(){
+        return this.full - this.used
+    }
+}
+delete battery.used;
+                </pre>
+            </li>
+        </ol>
+        <!--  -->
+        <br />
+        <h3>三组内置对象</h3>
+        <br />
+        <ul>
+            <li>浏览器对象模型
+                <ul>
+                    <li>windows
+                        <ul>
+                            <li>document</li>
+                            <li>history</li>
+                            <li>location</li>
+                            <li>navigator</li>
+                            <li>screen</li>
+                        </ul>
+                    </li>
+                </ul>
+            </li>
+            <li>文档对象模型(DOM)
+                <ul>
+                    <li>document</li>
+                    <ul>
+                        <li>html
+                            <ul>
+                                <li>head
+                                    <ul>
+                                        title
+                                    </ul>
+                                </li>
+                                <li>body
+                                    <ul>
+                                        div
+                                    </ul>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </ul>
+            </li>
+            <li>全局Javascript对象
+                <ul>
+                    <li>String</li>
+                    <li>Number</li>
+                    <li>Boolean</li>
+                    <li>Date</li>
+                    <li>Math</li>
+                    <li>RegEx(匹配文本的字符串模式)</li>
+                </ul>
+            </li>
+        </ul>
+        <!--  -->
+        <br />
+        <h3>window对象 <p class="badge badge-sm badge-warning">源码:windows.js</p></h3>
+        <script src="./js/window.js"></script>
+        <ul>
+            <li>创建含消息的对话框: <code>.alert()</code> </li>
+            <li>在新的标签页打开指定的URL: <code>.open()</code></li>
+            <li>打印当前页的内容: <code>.print()</code></li>
+        </ul>
+        <br />
+        <!--  -->
+        <br />
+        <h3>document对象 <p class="badge badge-sm badge-warning">源码:document.js</p></h3>
+        <script src="./js/document.js"></script>
+        <br />
+        <ul>
+            <li><code>document.write()</code></li>
+            <li><code>document.getElementById()</code></li>
+            <li><code>document.querySelectorAll()</code></li>
+            <li><code>document.createElement()</code></li>
+            <li><code>document.createTextNode()</code></li>
+        </ul>
+        <!--  -->
+        <br />
+        <h3>String对象  <p class="badge badge-sm badge-warning">源码:string.js</p></h3>
+        <br />
+        <pre>
+var str = 'Hello JavaScript ';
+        </pre>
+        <script src="./js/string.js"></script>
+        <!--  -->
+        <br />
+        <h3>Number对象 <p class="badge badge-sm badge-warning">源码:num.js</p></h3>
+        <br />
+        <pre>
+var num = 9.8765432;
+        </pre>
+        <script src="./js/num.js"></script>
+        <!--  -->
+        <br />
+        <h3>Math对象 <p class="badge badge-sm badge-warning">源码:math.js</p></h3>
+        <br />
+        <pre>
+var num = 9.8765432;
+        </pre>
+        <script src="./js/math.js"></script>
+        <!--  -->
+        <br />
+        <h3>Date对象 <p class="badge badge-sm badge-warning">源码:date.js</p></h3>
+        <pre></pre>
+        <script src="./js/date.js"></script>
+        <!--  -->
+        <br />
+        <h3>Time对象 <p class="badge badge-sm badge-warning">源码:time.js</p></h3>
+        <script src="./js/time.js"></script>
+        <br />
+    </div>
+    <!-- Optional JavaScript -->
+    <script src="./js/battery.js"></script>
+    <script src="./js/battery2.js"></script>
+    <script src="./js/battery3.js"></script>
+    <script src="./js/battery4.js"></script>
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+        integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+        integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>
